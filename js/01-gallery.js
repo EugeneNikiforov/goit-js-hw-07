@@ -9,10 +9,7 @@ function createImages(galleryItems) {
     return galleryItems.map(({ preview, original, description }, index) => {
         return ` <div class="gallery__item">
       <a class="gallery__link" href="${original}">
-      <img class="gallery__image"
-      src="${preview}"
-      data-source="${original}"
-      data-index="${index}"
+      <img class="gallery__image" src="${preview}" data-source="${original}" data-index="${index}"
       alt="${description}" /></a></div>`}).join(``);
 };
 imagesList.addEventListener(`click`, imagesClick);
