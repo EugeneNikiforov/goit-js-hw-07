@@ -4,7 +4,6 @@ import { galleryItems } from './gallery-items.js';
 const imagesList = document.querySelector(`ul.gallery`);
 const imagesMarkup = createImages(galleryItems);
 imagesList.insertAdjacentHTML(`beforeend`, imagesMarkup);
-
 function createImages(galleryItems) {
     return galleryItems.map(({ preview, original, description }) => {
         return `<li class="gallery__item"><a href="${original}">
