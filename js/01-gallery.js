@@ -17,12 +17,11 @@ function createImages(galleryItems) {
 };
 imagesList.addEventListener(`click`, imagesClick);
 function imagesClick(evt) {
-  evt.preventDefault()
-  currentItem = Number(evt.target.dataset.index)
-  const galleryImage = evt.target.classList.contains(`gallery__image`)
+    evt.preventDefault();
+    currentItem = Number(evt.target.dataset.index);
+    const galleryImage = evt.target.classList.contains(`gallery__image`);
   if (!galleryImage) {
-    return
-    };
+      return; };
     const instance = basicLightbox.create(`<img src="${evt.target.dataset.source}" width="800" height="600">`);
     instance.show();
     window.addEventListener(`keydown`, closeEscape);
