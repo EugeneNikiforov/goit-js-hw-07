@@ -19,7 +19,9 @@ function imagesClick(evt) {
     const galleryImage = evt.target.classList.contains(`gallery__image`);
   if (!galleryImage) {
       return; };
-    const instance = basicLightbox.create(`<img src="${evt.target.dataset.source}" width="800" height="600">`);
+  const instance = basicLightbox.create(`<img src="${evt.target.dataset.source}" width="800" height="600">`, {
+      onClose: () => { window.removeEventListener(`keydown`, closeEscape); }
+    });
     instance.show();
     window.addEventListener(`keydown`, closeEscape);
 
